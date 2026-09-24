@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flavien-devallan.fr/sitemap.xml

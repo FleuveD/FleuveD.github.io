@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavien Devallan | Portfolio - Développeur Web & Informatique</title>
+    <link rel="icon" type="image/png" href="assets/logofd.png" />
+    
+    <!-- SEO & Meta Description -->
+    <meta name="description" content="Découvrez le portfolio de Flavien Devallan, étudiant en BUT Informatique. Projets, compétences en développement web (HTML, CSS, JS, PHP), IA et bases de données.">
+    <meta name="keywords" content="Flavien Devallan, portfolio, développeur web, BUT Informatique, HTML, CSS, JavaScript, PHP, IA, développeur junior">
+    <meta name="author" content="Flavien Devallan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f245a">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Flavien Devallan | Portfolio">
+    <meta property="og:description" content="Découvrez le portfolio de Flavien Devallan, étudiant en BUT Informatique. Projets, compétences en développement web et IA.">
+    <meta property="og:image" content="assets/photo_profil.png">
+    <meta property="og:url" content="https://flavien-devallan.fr/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flavien Devallan | Portfolio">
+    <meta name="twitter:description" content="Découvrez le portfolio de Flavien Devallan, étudiant en BUT Informatique. Projets, compétences en développement web et IA.">
+    <meta name="twitter:image" content="assets/photo_profil.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlTheme = urlParams.get('theme');
+        if (urlTheme) {
+            localStorage.setItem('theme', urlTheme);
+        }
+        const savedTheme = urlTheme || localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <div id="page-loader" class="page-loader">
+        <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+        </svg>
+    </div>
+
+
+    <div class="animated-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+
+            <div class="nav-left">
+                <a href="#" class="nav-logo">Flavien DEVALLAN</a>
+            </div>
+
+
+            <div class="nav-center">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#experience" class="nav-link">Parcours</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#skills" class="nav-link">Compétences</a>
+            </div>
+
+
+            <div class="nav-right">
+                <a href="#contact" class="nav-link btn-contact">Contact</a>
+                <button class="theme-toggle theme-toggle-btn" aria-label="Changer le thème">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <button class="theme-toggle theme-toggle-btn" aria-label="Changer le thème">
+
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                    </button>
+                    <a href="#contact" class="nav-link btn-contact">Contact</a>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#about" class="nav-link">À propos</a>
+                    <a href="#experience" class="nav-link">Parcours</a>
+                    <a href="#projects" class="nav-link">Projets</a>
+                    <a href="#skills" class="nav-link">Compétences</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section id="hero" class="hero-section fade-up">
+            <div class="container hero-content text-center">
+                <h1 class="hero-title">
+                    Bonjour, je suis <br>
+                    <span class="text-gradient">Flavien Devallan</span>
+                </h1>
+                <p class="hero-subtitle fade-up">
+                    Développeur full-stack junior
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/FleuveD" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary btn-social">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/flavien-devallan-1b09943b9/" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-secondary btn-social">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:devallanflavien@outlook.fr" class="btn btn-secondary btn-social">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Mail
+                    </a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator" aria-label="Me découvrir">
+                <span class="scroll-text">Me découvrir</span>
+                <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="7 13 12 18 17 13"></polyline>
+                    <polyline points="7 6 12 11 17 6"></polyline>
+                </svg>
+            </div>
+        </section>
+
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-content fade-up">
+                    <h2 class="section-title">
+                        À propos de moi
+                    </h2>
+
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p>Étudiant en BUT Informatique, je suis passionné par le développement web et logiciel.</p>
+                            <p>J'aime me confronter à des défis techniques pour transformer des idées complexes en
+                                solutions concrètes, capables d'apporter une vraie valeur ajoutée aux professionnels.
+                            </p>
+                            <p>En parallèle de mes études, je suis également micro-entrepreneur dans le e-commerce
+                                (achat-revente en ligne), ce qui me permet de développer mon sens de l'organisation et
+                                mon autonomie.</p>
+                            <div class="internship-box">
+                                <strong>Actuellement à la recherche d'un stage de 10 à 12 semaines à partir d'avril
+                                    2027.</strong>
+                            </div>
+                        </div>
+
+                        <div class="about-visuals">
+                            <div class="profile-img-container">
+                                <div class="profile-img-glow"></div>
+                                <img src="assets/photo_profil.png" onerror="this.src='https://i.pravatar.cc/480?img=12'"
+                                    alt="Photo de profil" class="profile-img">
+                                <div class="opentowork-badge">#opentowork</div>
+                            </div>
+
+                            <div style="text-align: center; margin-bottom: 1rem; color: var(--muted-foreground);">
+                                <p style="font-weight: 600; color: var(--foreground); margin-bottom: 0.25rem;">19
+                                    ans</p>
+                                <p style="font-size: 0.9rem;">Lannion & Guingamp, Côtes d'Armor</p>
+                            </div>
+
+                            <div style="position: relative; display: inline-block;">
+                                <svg width="260" height="120" viewBox="0 0 260 120"
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 0; overflow: visible;">
+                                    <!-- Top-Left lines -->
+                                    <path d="M 15,28 L -3,10" stroke="var(--primary)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M 3,43 L -13,38" stroke="var(--primary)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M 30,20 L 25,4" stroke="var(--primary)" stroke-width="2.5"
+                                        stroke-linecap="round" />
+
+                                    <!-- Bottom-Right lines -->
+                                    <path d="M 245,92 L 263,110" stroke="var(--primary)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M 257,77 L 273,82" stroke="var(--primary)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M 230,100 L 235,116" stroke="var(--primary)" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <a href="assets/CV_Flavien_DEVALLAN.pdf" download="CV_Flavien_DEVALLAN.pdf" class="btn btn-white group"
+                                    style="position: relative; z-index: 1;">
+                                    <span class="btn-bg"></span>
+                                    <svg class="icon-download z-10" xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="7 10 12 15 17 10" />
+                                        <line x1="12" x2="12" y1="15" y2="3" />
+                                    </svg>
+                                    <span class="btn-text z-10">Télécharger le CV</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-content fade-up">
+                    <h2 class="section-title">
+                        Parcours
+                    </h2>
+
+                    <div class="timeline">
+                        <div class="timeline-line"></div>
+
+                        <div class="timeline-item slide-in-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">BUT Informatique</h3>
+                                <span class="timeline-date">2025 - Aujourd'hui</span>
+                            </div>
+                            <div class="timeline-company">IUT Lannion</div>
+                            <p class="timeline-desc">
+                                Je suis actuellement une formation en BUT Informatique à l'IUT Lannion. Cette formation
+                                me permet de me spécialiser dans ce domaine en y apprenant les bases de la
+                                programmation, de l'algorithmie et de la gestion de données. Je développe aussi nombres
+                                de compétences, comme la communication et la gestion de projet.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item slide-in-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">BAC Général</h3>
+                                <span class="timeline-date">2023 - 2025</span>
+                            </div>
+                            <div class="timeline-company">Lycée Auguste Pavie Guingamp</div>
+                            <p class="timeline-desc">
+                                J'obtiens mon Baccalauréat avec comme spécialités sciences du numérique et de
+                                l'informatique, mathématiques et sciences économique et sociales.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item slide-in-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">BAC Général</h3>
+                                <span class="timeline-date">2022 - 2023</span>
+                            </div>
+                            <div class="timeline-company">Lycée Notre-Dame Guingamp</div>
+                            <p class="timeline-desc">
+                                J'effectue ma classe de seconde avec Section Européenne avant de changer d'établissement
+                                pour avoir la spécialité Numérique et Sciences Informatique
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-content fade-up">
+                    <h2 class="section-title">
+                        Projets
+                    </h2>
+
+                    <div class="projects-grid" id="projects-container">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="https://github.com/FleuveD" target="_blank" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                            Voir plus de projets
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-content fade-up">
+                    <h2 class="section-title">Compétences</h2>
+                    <div class="skills-grid">
+                        <!-- Dev Web -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                Développement Web
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="20" height="20">
+                                    HTML
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" width="20" height="20">
+                                    CSS
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="20" height="20">
+                                    JavaScript
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" width="20" height="20">
+                                    PHP
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="20" height="20">
+                                    Bootstrap
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Langages & Scripting -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m18 16 4-4-4-4"></path>
+                                    <path d="m6 8-4 4 4 4"></path>
+                                    <path d="m14.5 4-5 16"></path>
+                                </svg>
+                                Langages & Scripting
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="20" height="20">
+                                    C
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="20" height="20">
+                                    Python
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash" width="20" height="20">
+                                    Bash
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Bases de données -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                                    <path d="M3 12A9 3 0 0 0 21 12"></path>
+                                </svg>
+                                Bases de données
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" width="20" height="20">
+                                    SQL
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="20" height="20">
+                                    PostgreSQL
+                                </span>
+                                <span class="skill-tag">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                    Tutorial D
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Outils & Environnement -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                                Outils
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="20" height="20">
+                                    Figma
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira" width="20" height="20">
+                                    Jira
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="20" height="20">
+                                    Git
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width="20" height="20">
+                                    GitHub
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- IA -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M17.196 9 6.804 15M6.804 9l10.392 6"/></svg>
+                                IA
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="assets/gemini.png" alt="Gemini" width="20" height="20">
+                                    Gemini
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="assets/antigravity.png" alt="Antigravity" width="24" height="24">
+                                    Antigravity
+                                </span>
+                                <span class="skill-tag">
+                                    <svg fill="currentColor" width="20" height="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+                                    Codex
+                                </span>
+                                <span class="skill-tag">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/>
+                                        <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/>
+                                    </svg>
+                                    API
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Systèmes d'exploitation -->
+                        <div class="skill-category-card">
+                            <h3 class="skill-category-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+                                </svg>
+                                Systèmes d'exploitation
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" width="20" height="20">
+                                    Linux
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg" alt="MacOS" width="20" height="20">
+                                    MacOS
+                                </span>
+                                <span class="skill-tag">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows" width="20" height="20">
+                                    Windows
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-content fade-up">
+                    <h2 class="section-title">
+                        Contact
+                    </h2>
+                    <p class="contact-desc">
+                        Je suis actuellement ouvert a de nouvelles opportunites. N'hésitez pas à me contacter !
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:devallanflavien@outlook.fr" class="contact-mail">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
+                            devallanflavien@outlook.fr
+                        </a>
+
+                        <div class="social-links">
+                            <a href="https://github.com/FleuveD" target="_blank" rel="noopener noreferrer"
+                                class="icon-wrapper hover-primary" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/flavien-devallan-1b09943b9/" target="_blank"
+                                rel="noopener noreferrer" class="icon-wrapper hover-primary" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect width="4" height="12" x="2" y="9" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-content"
+            style="display: flex; flex-direction: row; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <p style="color: white; margin: 0; font-size: 0.9rem;">© 2026 Flavien Devallan - Tous droits réservés</p>
+            <span style="color: rgba(255, 255, 255, 0.4);">|</span>
+            <a href="mentions-legales.html" class="footer-link"
+                style="text-decoration: none; font-size: 0.9rem;">Mentions légales</a>
+        </div>
+    </footer>
+
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Agrandie" class="lightbox-img">
+            <button id="lightbox-prev" class="lightbox-nav lightbox-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+            </button>
+            <button id="lightbox-next" class="lightbox-nav lightbox-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+            <button id="lightbox-close" class="lightbox-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="lightbox-thumbnails" class="lightbox-thumbnails"></div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

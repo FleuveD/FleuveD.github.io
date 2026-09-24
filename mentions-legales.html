@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavien Devallan</title>
+    <link rel="icon" type="image/png" href="assets/logofd.png" />
+    <meta name="description" content="Mentions légales du portfolio de Flavien Devallan.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Theme Script to prevent FOUC -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlTheme = urlParams.get('theme');
+        if (urlTheme) {
+            localStorage.setItem('theme', urlTheme);
+        }
+        const savedTheme = urlTheme || localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Page Transition Loader -->
+    <div id="page-loader" class="page-loader">
+        <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">Flavien DEVALLAN</a>
+            </div>
+
+            <div class="nav-center">
+                <a href="index.html#about" class="nav-link">À propos</a>
+                <a href="index.html#experience" class="nav-link">Parcours</a>
+                <a href="index.html#projects" class="nav-link">Projets</a>
+                <a href="index.html#skills" class="nav-link">Compétences</a>
+            </div>
+
+            <div class="nav-right">
+                <a href="index.html#contact" class="nav-link btn-contact">Contact</a>
+                <button class="theme-toggle theme-toggle-btn" aria-label="Changer le thème">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <button class="theme-toggle theme-toggle-btn" aria-label="Changer le thème">
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
+                    <a href="index.html#contact" class="nav-link btn-contact">Contact</a>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="index.html#about" class="nav-link">À propos</a>
+                    <a href="index.html#experience" class="nav-link">Parcours</a>
+                    <a href="index.html#projects" class="nav-link">Projets</a>
+                    <a href="index.html#skills" class="nav-link">Compétences</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main style="flex: 1; padding-top: 6rem; padding-bottom: 4rem; position: relative; z-index: 10;">
+        <div class="container" style="max-width: 56rem; position: relative; z-index: 10;">
+            <div class="fade-up">
+                <h1 style="font-family: var(--font-display); font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">
+                    Mentions Légales
+                </h1>
+
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    <section>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: hsl(var(--primary));">Éditeur du site</h2>
+                        <p style="color: hsl(var(--muted-foreground)); line-height: 1.75;">
+                            Flavien Devallan<br>
+                            Email : devallanflavien@outlook.fr<br>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: hsl(var(--primary));">Hébergement</h2>
+                        <p style="color: hsl(var(--muted-foreground)); line-height: 1.75;">
+                            Ce site est hébergé par Vercel, dont le siège social est situé à San Francisco, Californie.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: hsl(var(--primary));">Propriété intellectuelle</h2>
+                        <p style="color: hsl(var(--muted-foreground)); line-height: 1.75;">
+                            Tous droits réservés © 2026 Flavien Devallan. L'ensemble du contenu de ce site est la propriété exclusive de Flavien Devallan.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: hsl(var(--primary));">Données personnelles</h2>
+                        <p style="color: hsl(var(--muted-foreground)); line-height: 1.75;">
+                            Aucune données personnelles n'est collectée par ce site.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: hsl(var(--primary));">Cookies</h2>
+                        <p style="color: hsl(var(--muted-foreground)); line-height: 1.75;">
+                            Ce site n'utilise pas de cookies de traçage publicitaire. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés afin d'assurer une meilleure expérience utilisateur.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content" style="display: flex; flex-direction: row; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <p style="color: white; margin: 0; font-size: 0.9rem;">© 2026 Flavien Devallan - Tous droits réservés</p>
+            <span style="color: rgba(255, 255, 255, 0.4);">|</span>
+            <a href="mentions-legales.html" class="footer-link" style="text-decoration: none; font-size: 0.9rem;">Mentions légales</a>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
