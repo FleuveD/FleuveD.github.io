@@ -43,26 +43,6 @@ themeToggles.forEach(btn => {
     });
 });
 
-// Mobile Menu
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileLinks = mobileMenu.querySelectorAll('a');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-});
-
-mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-        mobileMenu.classList.remove('active');
-    }
-});
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-});
 
 // Navbar Scroll Effect & Hero Background Fade Out
 const navbar = document.getElementById('navbar');

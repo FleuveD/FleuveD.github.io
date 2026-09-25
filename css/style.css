@@ -215,6 +215,14 @@ body {
   display: none;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1.5rem;
+}
+
 @media (min-width: 768px) {
   .nav-container {
     display: grid;
