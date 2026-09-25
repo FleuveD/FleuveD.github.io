@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://flavien-devallan.fr/sitemap.xml
+Sitemap: https://fleuved.github.io/sitemap.xml
