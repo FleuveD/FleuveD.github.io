@@ -335,3 +335,46 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') prevLightbox();
     if (e.key === 'ArrowRight') nextLightbox();
 });
+
+// Timeline Scroll Animation
+const timeline = document.getElementById('experience-timeline');
+const timelineLineFilled = document.getElementById('timeline-line-filled');
+const timelineDots = document.querySelectorAll('.timeline-dot');
+
+function updateTimelineScroll() {
+    if (!timeline || !timelineLineFilled) return;
+
+    const timelineRect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    const triggerPoint = windowHeight * 0.6;
+    const topOffset = timelineRect.top;
+    
+    if (topOffset > triggerPoint) {
+        timelineLineFilled.style.height = '0px';
+        timelineDots.forEach(dot => dot.classList.remove('active'));
+        return;
+    }
+    
+    let fillHeight = triggerPoint - topOffset;
+    if (fillHeight > timelineRect.height) {
+        fillHeight = timelineRect.height;
+    }
+    
+    timelineLineFilled.style.height = `${fillHeight}px`;
+    
+    timelineDots.forEach(dot => {
+        const dotRect = dot.getBoundingClientRect();
+        const dotCenter = dotRect.top + (dotRect.height / 2);
+        
+        if (dotCenter <= triggerPoint) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateTimelineScroll);
+window.addEventListener('resize', updateTimelineScroll);
+updateTimelineScroll();

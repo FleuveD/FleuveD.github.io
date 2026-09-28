@@ -707,13 +707,15 @@ body {
   padding-left: 2rem;
 }
 
-.timeline-line {
+.timeline-line-filled {
   position: absolute;
-  left: 0.45rem;
+  left: calc(0.5rem - 1.5px);
   top: 0;
-  bottom: 0;
-  width: 2px;
-  border-left: 3px dashed var(--primary);
+  height: 0;
+  width: 3px;
+  background-image: repeating-linear-gradient(to bottom, var(--primary) 0, var(--primary) 8px, transparent 8px, transparent 16px);
+  z-index: 1;
+  transition: height 0.1s linear;
 }
 
 .timeline-item {
@@ -732,10 +734,16 @@ body {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: var(--primary);
+  background-color: var(--background);
   border: 2px solid var(--primary);
   box-shadow: 0 0 15px var(--primary-05);
   transform: translateX(-50%);
+  z-index: 2;
+  transition: background-color 0.4s ease;
+}
+
+.timeline-dot.active {
+  background-color: var(--primary);
 }
 
 .timeline-header {
