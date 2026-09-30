@@ -199,7 +199,7 @@ if (projectsContainer) {
         const imgUrl = item.project.images[0];
         
         card.innerHTML = `
-            <div class="project-img-wrapper" onclick="openLightbox(${index}, 0)" style="cursor: pointer;">
+            <div class="project-img-wrapper" role="button" tabindex="0" onclick="openLightbox(${index}, 0)" onkeydown="if(event.key==='Enter'||event.key===' ') this.click()" style="cursor: pointer;">
                 <img src="${imgUrl}" alt="${item.project.title}" class="project-img" loading="lazy">
                 <div class="project-img-overlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
@@ -284,7 +284,7 @@ function nextLightbox() {
 
 function renderLightboxThumbnails() {
     lightboxThumbnails.innerHTML = currentImages.map((img, i) => `
-        <div class="lightbox-thumb ${i === currentIndex ? 'active' : ''}" onclick="setLightboxIndex(${i})">
+        <div class="lightbox-thumb ${i === currentIndex ? 'active' : ''}" role="button" tabindex="0" onclick="setLightboxIndex(${i})" onkeydown="if(event.key==='Enter'||event.key===' ') this.click()">
             <img src="${img}" alt="Thumbnail ${i+1}">
         </div>
     `).join('');
