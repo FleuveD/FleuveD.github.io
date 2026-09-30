@@ -93,7 +93,6 @@ body {
   background-image: linear-gradient(to right, #1f2459, #4a4f8c);
 }
 
-
 .page-loader {
   position: fixed;
   inset: 0;
@@ -119,7 +118,6 @@ body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
 
 @keyframes blob {
   0% { transform: translate(0px, 0px) scale(1); }
@@ -181,7 +179,6 @@ body {
   background-color: var(--primary-01);
   animation-delay: 4s;
 }
-
 
 .navbar {
   position: fixed;
@@ -396,7 +393,6 @@ body {
   font-weight: 500;
 }
 
-
 .section {
   padding: 6rem 0;
   position: relative;
@@ -417,7 +413,6 @@ body {
     text-align: left;
   }
 }
-
 
 .hero-section {
   min-height: 100vh;
@@ -589,7 +584,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-
 .about-grid {
   display: grid;
   gap: 3rem;
@@ -701,7 +695,6 @@ body {
   border-color: transparent;
 }
 
-
 .timeline {
   position: relative;
   padding-left: 2rem;
@@ -784,7 +777,6 @@ body {
   line-height: 1.75;
   max-width: 42rem;
 }
-
 
 .skills-grid {
   display: flex;
@@ -872,7 +864,6 @@ body {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-
 
 .carousel-container {
   margin: 1rem 0;
@@ -1050,7 +1041,7 @@ html.dark .tech-tag {
 .project-link:hover {
   color: var(--foreground);
 }
-/* Skills Section */
+
 .skills-section {
   padding: 5rem 0;
 }
@@ -1191,7 +1182,6 @@ html:not(.dark) .hover-primary:hover {
   gap: 1rem;
 }
 
-
 .footer {
   padding: 2rem 0;
   border-top: 1px solid var(--border);
@@ -1211,7 +1201,6 @@ html:not(.dark) .hover-primary:hover {
 .footer-link:hover {
   color: var(--primary);
 }
-
 
 .lightbox {
   position: fixed;
@@ -1340,7 +1329,6 @@ html:not(.dark) .hover-primary:hover {
   object-fit: cover;
 }
 
-
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -1363,7 +1351,6 @@ html:not(.dark) .hover-primary:hover {
   transform: translateX(0);
 }
 
-/* Projects Grid and Cards */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;

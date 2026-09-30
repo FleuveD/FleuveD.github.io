@@ -1,13 +1,12 @@
-// Page Transition Loader
+
 window.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('page-loader');
     if (loader) {
-        // Wait 600ms to simulate the react transition when page loads
+        
         setTimeout(() => {
             loader.classList.add('hidden');
         }, 600);
 
-        // Show loader before navigating to another HTML page
         document.querySelectorAll('a[href*=".html"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -22,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Theme Management
 const themeToggles = document.querySelectorAll('.theme-toggle');
 const rootElement = document.documentElement;
 let isDark = rootElement.classList.contains('dark');
@@ -43,8 +41,6 @@ themeToggles.forEach(btn => {
     });
 });
 
-
-// Navbar Scroll Effect & Hero Background Fade Out
 const navbar = document.getElementById('navbar');
 const animatedBg = document.querySelector('.animated-bg');
 
@@ -58,7 +54,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth Scrolling for Anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -78,7 +73,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll Animations (Intersection Observer)
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -98,7 +92,6 @@ document.querySelectorAll('.fade-up, .slide-in-left').forEach(el => {
     observer.observe(el);
 });
 
-// Skills Data
 const competencyProjects = [
     {
         competencyTitle: "Réaliser",
@@ -190,14 +183,12 @@ const competencyProjects = [
     }
 ];
 
-// Lightbox State
 let currentImages = [];
 let currentIndex = 0;
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxThumbnails = document.getElementById('lightbox-thumbnails');
 
-// Render Projects
 const projectsContainer = document.getElementById('projects-container');
 
 if (projectsContainer) {
@@ -231,7 +222,6 @@ if (projectsContainer) {
     });
 }
 
-// Mobile Carousel Logic
 window.updateMobileImg = function(projectIndex, imgIndex) {
     const project = competencyProjects[projectIndex];
     const imgEl = document.getElementById(`mobile-img-${projectIndex}`);
@@ -262,8 +252,6 @@ window.nextMobileImg = function(projectIndex) {
     updateMobileImg(projectIndex, current);
 }
 
-
-// Lightbox Logic
 window.openLightbox = function(projectIndex, imgIndex) {
     currentImages = competencyProjects[projectIndex].project.images;
     currentIndex = imgIndex;
@@ -317,7 +305,6 @@ window.setLightboxIndex = function(index) {
     updateLightboxImg();
 }
 
-// Lightbox Events
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 document.getElementById('lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); prevLightbox(); });
 document.getElementById('lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); nextLightbox(); });
@@ -336,7 +323,6 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') nextLightbox();
 });
 
-// Timeline Scroll Animation
 const timeline = document.getElementById('experience-timeline');
 const timelineLineFilled = document.getElementById('timeline-line-filled');
 const timelineDots = document.querySelectorAll('.timeline-dot');
